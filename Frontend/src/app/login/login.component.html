@@ -1,0 +1,66 @@
+<body>
+ <div id="masthead" >  
+    <div class="container">
+      <div class="row">
+        <div class="col-md-7">
+          <h1>Login
+            <p class="lead"></p>
+          </h1>
+        </div>
+      </div>
+    </div>
+   </div> 
+  
+        
+         
+          <div>
+            <!----Signup form starts here-->
+            
+            <form class="form" #userlogin="ngForm" (ngSubmit)="userVerify(userlogin)">
+              
+              <div class="row mb-3">
+                <div class="col-sm-8">
+                  <label for="username" class="col-sm-2 col-form-label">Username</label>
+                  <input type="username"  class="form-control"  name="username" [(ngModel)]="User.username" #username="ngModel" [class.is-invalid]="username.invalid && username.touched" pattern="^(?!.*\.{2})(?=.*[A-Za-z][A-Za-z0-9]).{4,}$"  required>
+ 
+                  <small class="text-danger" [class.hidden]="username.valid||username.touched"><b>Minimum length is 4 with charaters,numbers and some special characters</b></small>
+                 
+                </div>
+              </div>
+              
+              <div class="row mb-3">
+                <div class="col-sm-8">
+                  <label for="password" class="col-sm-2 col-form-label">Password</label>
+                  <input type="password"  class="form-control"  name="password" [(ngModel)]="User.password" #password="ngModel" [class.is-invalid]="password.invalid && password.touched" pattern="^(?=.*\d)(?=.*[a-z])(?=.*[A-Z]).{8,}$"  required >
+                  <small class="text-danger" [class.hidden]="password.valid||password.touched"><b>Minimum length is 8 with lowercase,uppercase and a number</b></small>
+                </div>
+              </div>
+              
+              <div class="row mb-3">
+                <div class="col-sm-8">
+                  <p>New User?<a href="/signup">Signup</a></p>
+                  
+                </div>
+              </div>
+              <button type="submit" class="btn btn-primary"[disabled]="userlogin.form.invalid" >Login</button>
+            </form>
+          </div>
+          <div class="container" id="footer">
+            <div class="row">
+              <div class="col col-sm-12">
+                
+                <h1>Follow Us</h1>
+                <div class="btn-group">
+                 <a class="btn btn-twitter btn-lg" href="#"><i class="icon-twitter icon-large"></i> Twitter</a>
+                 <a class="btn btn-facebook btn-lg" href="#"><i class="icon-facebook icon-large"></i> Facebook</a>
+                 <a class="btn btn-google-plus btn-lg" href="#"><i class="icon-google-plus icon-large"></i> Google+</a>
+                </div>
+                
+              </div>
+            </div>
+          </div>
+          
+          <hr>
+          
+          <hr>
+</body>     

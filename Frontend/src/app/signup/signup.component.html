@@ -1,0 +1,84 @@
+<div class="bodysign">
+<div id="masthead">  
+    <div class="container">
+      <div class="row">
+        <div class="col-md-7">
+          <h1>SignUp
+            <p class="lead"></p>
+          </h1>
+        </div>
+      </div>
+    </div>   
+  </div>     
+          <div>
+            <!----Signup form starts here-->
+            <form class="form2" #signup="ngForm" (ngSubmit)="signupVerify(signup)" >
+              <div class="row mb-3">
+                <div class="col-sm-10">
+                  <label for="firstname" class="col-sm-6 col-form-label">First Name</label>
+                  <input type="Firstname"  class="form-control" name="firstname" >
+                  
+                </div>
+              </div>
+              <div class="row mb-3">
+                 <div class="col-sm-10">
+                  <label for="lastname" class="col-sm-6 col-form-label">Last Name</label>
+                  <input type="lastname"  class="form-control" name="lastname" >
+                  
+                  </div>
+              </div>
+                <div class="row mb-3">
+                  <div class="col-sm-10">
+                    <label for="email" class="col-sm-6 col-form-label">Email</label>
+                    <input type="email"  class="form-control" id="email"  name="email"[(ngModel)]="User.email" #email="ngModel" [class.is-invalid]="email.invalid && email.touched" pattern="^(?!.*\.{2})([A-Za-z][A-Za-z0-9\-._#]+)@([A-Za-z0-9\-]+).([a-z]{2,3})(.[a-z]{2,3})+?$"  required>
+                    <small class="text-danger" [class.hidden]="email.valid||email.touched"><b>Email is invalid</b></small>
+                 
+                  </div>
+               </div>
+              <div class="row mb-3">
+                <div class="col-sm-10">
+                  <label for="username" class="col-sm-6 col-form-label">Username</label>
+                  <input type="username"  class="form-control" id="uname"  name="user"[(ngModel)]="User.user" #user="ngModel" [class.is-invalid]="user.invalid && user.touched" pattern="^(?!.*\.{2})(?=.*[A-Za-z][A-Za-z0-9]).{4,}$"  required>
+                  <small class="text-danger" [class.hidden]="user.valid||user.touched"><b>Minimum length is 4 with charaters,numbers </b></small>
+                 
+                </div>
+              </div>
+              
+              <div class="row mb-3">
+                <div class="col-sm-10">
+                  <label for="inputPassword3" class="col-sm-6 col-form-label">Password</label>
+                  <input type="password"  class="form-control" id="pwd"  name="password" [(ngModel)]="User.password" #password="ngModel" [class.is-invalid]="password.invalid && password.touched" pattern="^(?=.*\d)(?=.*[a-z])(?=.*[A-Z]).{8,}$"  required>
+                  <small class="text-danger" [class.hidden]="password.valid||password.touched"><b>Minimum length is 8 with lowercase and uppercase charaters,numbers</b></small>
+                 
+                </div>
+              </div>
+              
+              <div class="row mb-3">
+                <div class="col-sm-10">
+                  <label for="inputPassword3" class="col-sm-8 col-form-label">Re-enter Password</label>
+                  <input type="password"  class="form-control" id="pwd2" name="password2" [(ngModel)]="User.password2" #password2="ngModel" [class.is-invalid]="password2.invalid && password2.touched" pattern="^(?=.*\d)(?=.*[a-z])(?=.*[A-Z]).{8,}$" required >
+                  <small class="text-danger" [class.hidden]="password2.valid||password2.touched"><b>Minimum length is 8 with lowercase and uppercase charaters,numbers</b></small>
+                </div>
+              </div>
+              <br>
+              <button type="submit" class="btn btn-primary"[disabled]="signup.form.invalid" >SignUp</button>
+            </form>
+          </div>
+        
+
+        <div class="container" id="footer">
+          <div class="row">
+            <div class="col col-sm-12">
+              
+              <h1>Follow Us</h1>
+              <div class="btn-group">
+               <a class="btn btn-twitter btn-lg" href="#"><i class="icon-twitter icon-large"></i> Twitter</a>
+               <a class="btn btn-facebook btn-lg" href="#"><i class="icon-facebook icon-large"></i> Facebook</a>
+               <a class="btn btn-google-plus btn-lg" href="#"><i class="icon-google-plus icon-large"></i> Google+</a>
+              </div>
+              
+            </div>
+          </div>
+        </div>
+        
+      </div> 

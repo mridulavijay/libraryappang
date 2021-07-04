@@ -1,0 +1,72 @@
+<div id="masthead">  
+    <div class="container">
+      <div class="row">
+        <div class="col-md-7">
+          <h1> Update Book
+            <p class="lead"></p>
+          </h1>
+        </div>
+      </div>
+    </div>
+   </div> 
+  
+        
+         
+   <div class="container">    
+              
+      <div   class="mainbox col-md-6 col-md-offset-3 col-sm-8 col-sm-offset-2">
+          <div class="panel panel-info">
+              <div class="panel-heading" style="background-color:darkblue;">
+                  <div class="panel-title" style="color: white;">Update Book Details</div>
+                  
+              </div>  
+  
+              <div class="panel-body" >
+                
+                  <form class="form3" (ngSubmit)=editBook()>
+                    
+                    
+                      <div class="row mb-3">
+                          <div class="col-sm-10">
+                            <label for="title" class="col-sm-4 col-form-label">Book Title</label>
+                            <input type="title"  class="form-control" id="btitle"[(ngModel)]="BookItem.title" name="btitle"required >
+                            <label for="error" id="errorb"></label>
+                          </div>
+                        </div>
+                        <div class="row mb-3">
+                          <div class="col-sm-10">
+                            <label for="author" class="col-sm-2 col-form-label">Author</label>
+                            <input type="author"  class="form-control" id="bauthor" [(ngModel)]="BookItem.author"name="bauthor" required>
+                            <label for="error" id="errora"></label>
+                          </div>
+                        </div>
+                        <div class="row mb-3">
+                          <div class="col-sm-10">
+                            <label for="genre" class="col-sm-2 col-form-label">Genre</label>
+                            <input type="text"  class="form-control" id="bgenre"[(ngModel)]="BookItem.genre" name="bgenre" required >
+                            <label for="error" id="errorg"></label>
+                          </div>
+                        </div>
+                        <div class="row mb-3">
+                          <div class="col-sm-10">
+                            <label for="exampleInputFile">Image File Url</label>
+                            <input type="text" class="form-control" id="exampleInputFile" [(ngModel)]="BookItem.image"id="imgb" name="image"required>
+                            </div>
+                        </div>    
+                        <br>
+                        <div class="row mb-3">
+                          <div class="col-sm-10">
+                            <label for="textarea"> Book Description</label>
+                            <textarea class="form-control" rows="4" id="bdesc"name="bdesc" [(ngModel)]="BookItem.desc">{{BookItem.desc}}</textarea>
+                           
+                            </div>
+                        </div>  
+                        <br>
+                        <div style="text-align:justify;">
+                        <button type="submit" class="btn btn-primary"value="Submit">Submit</button>
+                      </div>
+                  </form>
+               </div>
+         </div>
+      </div>
+  </div>

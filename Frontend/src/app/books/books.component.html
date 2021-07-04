@@ -1,0 +1,62 @@
+<div id="masthead">  
+    <div class="container">
+      <div class="row">
+        <div class="col-md-7">
+          <h1>Books
+            <p class="lead"></p>
+          </h1>
+        </div>
+       
+        </div>
+      </div> 
+    </div><!-- /cont -->
+    
+    <div class="container">
+      <div class="row">
+        <div class="col-md-12">
+          <div class="top-spacer"> </div>
+        </div>
+      </div> 
+    </div><!-- /cont -->
+    
+  
+  
+  
+  <!--<div class="container">
+    <div class="row">
+      
+      <div class="col-md-12"> 
+        
+        <div class="panel">
+          <div class="panel-body">-->
+            
+            
+            
+            <!--/stories-->
+           
+            <div class="row" *ngFor='let book of books'>    
+              <br>
+              <div class="col-md-2 col-sm-3 text-center">
+                <a class="story-title" href="#"><img alt="" src={{book.image}} [style.width.px]="100" [style.height.px]="100" class="img-circle"></a>
+              </div>
+              <div class="col-md-10 col-sm-9">
+                <h3>{{book.title}}</h3>
+                <div class="row">
+                  <div class="col-xs-9">
+                    <h4><span class="label label-default">{{book.author}}</span></h4><h4>
+                    <small  class="text-muted">{{book.genre}}
+                      <a href="/book" (click)=getBook(book) class="text-muted">Read More</a></small>
+                    </h4></div>
+                    
+                  <div class="col-sm-4" style="float:right">
+                   <p> <button class="btn btn-warning" style="cursor:pointer "  *ngIf="userCat()" (click)="editBook(book)" style="margin-left: 20px;margin-right:10px"> Edit</button>
+                    <button class="btn btn-danger" style="cursor:pointer" *ngIf="userCat()" (click)="deleteBook(book)"> Delete</button></p>
+                  </div>
+                </div>
+                <br><br>
+              </div>
+            </div>
+        
+         
+            
+           
